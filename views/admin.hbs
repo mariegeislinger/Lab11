@@ -1,0 +1,33 @@
+<h2>Admin Page - Feedback</h2>
+
+{{#if feedback}}
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>email</th>
+                <th>Comments</th>
+                <th>Current Student</th>
+                <th>Department(s)</th>
+                <th>Date Created</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {{#each feedback}}
+                <tr>
+                    <td>{{this.id}}</td>
+                    <td>{{this.name}}</td>
+                    <td>{{this.email}}</td>
+                    <td>{{this.comments}}</td>
+                    <td>{{this.isCurrentStudent}}</td>
+                    <td>{{this.departments}}</td>
+                    <td>{{this.createdAt}}</td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+{{else}}
+    <p>No feedback found</p>
+{{/if}}
